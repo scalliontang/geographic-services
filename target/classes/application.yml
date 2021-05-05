@@ -19,3 +19,12 @@ logging:
   level:
     #org.springframework.orm.jpa: ERROR
     com.sicongtang.geographic: DEBUG
+
+#============================================================#
+##                 ZipcodeApi Info                          ##
+#============================================================#
+api:
+  zipcode:
+    gateway: http://www.zipcodeapi.com
+    key: gpuADcESJrV0gcsaVQ36N1JuyDQxu0efAwS1TOtIgZkQqsfvg1raGjjubSAHpwbG
+    uri: /rest/{key}/info.json/{zipcode}/degrees
