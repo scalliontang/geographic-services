@@ -6,6 +6,9 @@ import com.sicongtang.geographic.model.ZipcodeApiResponse;
 public class GeographicMapper {
 
     public static LocationResponse toLocationResponse(ZipcodeApiResponse zipcodeApi) {
+        if(zipcodeApi == null) {
+            return LocationResponse.defaultValue();
+        }
         LocationResponse response = new LocationResponse();
         response.setCity(zipcodeApi.getCity());
         response.setState(zipcodeApi.getState());
