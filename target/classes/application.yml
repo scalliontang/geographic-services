@@ -1,0 +1,21 @@
+server:
+  #port: 8443
+  servlet:
+    context-path: /geographic-services
+
+#============================================================#
+##                 Spring Config                            ##
+#============================================================#
+spring:
+  application:
+    name: geographic-services
+  jackson:
+    default-property-inclusion: non-null
+
+#============================================================#
+##                 Log Config                               ##
+#============================================================#
+logging:
+  level:
+    #org.springframework.orm.jpa: ERROR
+    com.sicongtang.geographic: DEBUG
