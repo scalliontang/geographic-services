@@ -41,4 +41,12 @@ public class LocationResponse {
     public void setTimezone(String timezone) {
         this.timezone = timezone;
     }
+
+    public static LocationResponse defaultValue() {
+        LocationResponse response = new LocationResponse();
+        response.setCity("Unknown");
+        response.setState("Unknown");
+        response.setTimezone("N/A");
+        return response;
+    }
 }
