@@ -1,5 +1,6 @@
 package com.sicongtang.geographic.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
@@ -15,12 +16,12 @@ import java.time.Duration;
 @ComponentScan(basePackages = "com.sicongtang.geographic")
 public class GeographicServicesConfig {
 
-    @Value("${api.zipcode.gateway}")
-    private String gateway;
+    @Autowired
+    private ZipCodeProperties zipCodeProperties;
 
     @Bean(name = "zipCodeRestTemplate")
     public RestTemplate zipCodeRestTemplate(RestTemplateBuilder builder) {
-        return builder.uriTemplateHandler(new DefaultUriBuilderFactory(gateway))
+        return builder.uriTemplateHandler(new DefaultUriBuilderFactory(zipCodeProperties.getGateway()))
                 .setReadTimeout(Duration.ofMillis(10000))
                 .setConnectTimeout(Duration.ofMillis(10000))
                 .build();
