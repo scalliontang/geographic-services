@@ -3,7 +3,7 @@ package com.sicongtang.geographic.service;
 
 import com.sicongtang.geographic.mapper.GeographicMapper;
 import com.sicongtang.geographic.model.LocationResponse;
-import com.sicongtang.geographic.model.ZipCodeRequest;
+import com.sicongtang.geographic.model.ZipcodeRequest;
 import com.sicongtang.geographic.model.ZipcodeApiResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class GeographicServiceImpl implements GeographicService{
     }
 
     @Override
-    public LocationResponse[] getLocations(ZipCodeRequest request) {
+    public LocationResponse[] getLocations(ZipcodeRequest request) {
         int n = request.getZipcodes().length;
         LocationResponse[] responses = new LocationResponse[n];
         for(int i = 0; i < n; i++) {

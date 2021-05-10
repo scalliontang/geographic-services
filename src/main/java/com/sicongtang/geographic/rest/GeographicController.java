@@ -2,7 +2,7 @@ package com.sicongtang.geographic.rest;
 
 
 import com.sicongtang.geographic.model.LocationResponse;
-import com.sicongtang.geographic.model.ZipCodeRequest;
+import com.sicongtang.geographic.model.ZipcodeRequest;
 import com.sicongtang.geographic.service.GeographicService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -51,7 +51,7 @@ public class GeographicController {
             @ApiResponse(code = 200, response = LocationResponse.class, message = "Successful response"),
             @ApiResponse(code = 400, message = "Bad request")
     })
-    public ResponseEntity<LocationResponse[]> getMultipleLocations(@RequestBody ZipCodeRequest request) {
+    public ResponseEntity<LocationResponse[]> getMultipleLocations(@RequestBody ZipcodeRequest request) {
         LOG.debug("Received a request to get multiple zipcodes");
         LocationResponse[] response = geographicService.getLocations(request);
         return new ResponseEntity<>(response, HttpStatus.OK);

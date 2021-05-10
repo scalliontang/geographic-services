@@ -13,7 +13,9 @@ public class GeographicMapper {
         response.setCity(zipcodeApi.getCity());
         response.setState(zipcodeApi.getState());
         response.setZipcode(zipcodeApi.getZipcode());
-        response.setTimezone(zipcodeApi.getTimezone().getTimezoneAbbr());
+        if(zipcodeApi.getTimezone() != null) {
+            response.setTimezone(zipcodeApi.getTimezone().getTimezoneAbbr());
+        }
         return response;
     }
 }
