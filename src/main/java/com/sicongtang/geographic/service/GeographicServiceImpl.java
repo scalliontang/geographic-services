@@ -34,4 +34,9 @@ public class GeographicServiceImpl implements GeographicService{
         }
         return responses;
     }
+
+    //For test purpose
+    public void setZipCodeService(ZipCodeService zipCodeService) {
+        this.zipCodeService = zipCodeService;
+    }
 }
